@@ -4,21 +4,24 @@
 
 This project demonstrates an automated workflow on AWS, designed to enhance real-time processing and notification systems through the integration of several AWS services, including S3, Lambda, SNS, and IAM. This setup creates a responsive and automated system triggered by specific user actions, with an emphasis on security and scalability. Below is a detailed overview of the workflow, components involved, and the automation techniques employed.
 
-##Workflow
+## Workflow
 
-1. Image Upload Trigger:
+1. Image Upload Trigger: 
+
 Action: Users upload an image to a designated Amazon S3 bucket.
 Outcome: This upload event automatically triggers an AWS Lambda function.
 
 2. Lambda Function Execution:
+
 Process: Triggered by the S3 upload event, the Lambda function executes its code.
 Task: It initiates an Amazon SNS (Simple Notification Service) alert to notify about the image upload.
 
 3. SNS Notification:
+
 Notification: Triggered by the Lambda function, Amazon SNS dispatches an email notification.
 Recipients: The email is sent to predefined recipients, alerting them of the new image upload in the S3 bucket.
 
-##Security and Permissions
+## Security and Permissions
 
 1. AWS Identity and Access Management (IAM):
 Roles and Permissions: Utilizes IAM roles to securely manage permissions, allowing the Lambda function to be invoked by S3 and to invoke the SNS topic for notifications.
